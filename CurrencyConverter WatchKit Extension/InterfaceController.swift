@@ -9,17 +9,19 @@
 import WatchKit
 import Foundation
 
+var activeCurrency = 0
+var currencies = ["GBP", "EUR", "JPY", "CAD"]
+var currencyConversions = [0.7, 0.8, 0.9, 1.5]
 
 class InterfaceController: WKInterfaceController {
     
-    var currencies = ["GBP", "EUR", "JPY", "CAD"]
 
     @IBOutlet var currencyLabel: WKInterfaceLabel!
     
     @IBAction func currencyChooser(_ value: Float) {
         
-        var currencyChoice = Int(value * 3)
-        currencyLabel.setText(currencies[currencyChoice])
+        activeCurrency = Int(value * 3)
+        currencyLabel.setText(currencies[activeCurrency])
         
     }
     
