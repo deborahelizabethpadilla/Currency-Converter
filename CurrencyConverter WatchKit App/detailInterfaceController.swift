@@ -17,6 +17,8 @@ class detailInterfaceController: WKInterfaceController {
     
     @IBOutlet var currencyLabel: WKInterfaceLabel!
     
+    @IBOutlet var amountSlider: WKInterfaceSlider!
+    
     @IBAction func adjustAmount(_ value: Float) {
         
         var numberOfDollars = Int(value * 20)
@@ -33,6 +35,12 @@ class detailInterfaceController: WKInterfaceController {
         super.willActivate()
         
         currencyLabel.setText(currencies[activeCurrency])
+        
+        dollarsLabel.setText("1 USD equals...")
+        
+        conversionAmount.setText("\(currencyConversions[activeCurrency])")
+        
+        amountSlider.setValue(0.5)
     }
     
     override func didDeactivate() {

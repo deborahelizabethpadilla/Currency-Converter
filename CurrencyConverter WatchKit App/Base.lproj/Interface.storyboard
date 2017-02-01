@@ -49,6 +49,7 @@
                         </slider>
                     </items>
                     <connections>
+                        <outlet property="amountSlider" destination="Gld-4Z-H33" id="RXf-Gp-iJx"/>
                         <outlet property="conversionAmount" destination="ROw-Fb-PcI" id="Kfx-wi-rlc"/>
                         <outlet property="currencyLabel" destination="ldf-SE-sjg" id="EFV-xf-Z5P"/>
                         <outlet property="dollarsLabel" destination="gVE-xw-G82" id="onr-aV-7Om"/>
