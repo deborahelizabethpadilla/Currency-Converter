@@ -18,9 +18,14 @@
                         <label width="1" alignment="center" verticalAlignment="center" text="GBP" textAlignment="center" id="xhM-PF-rg7">
                             <fontDescription key="font" type="system" pointSize="40"/>
                         </label>
-                        <slider width="1" alignment="center" verticalAlignment="bottom" maximum="3" steps="3" id="oJX-8U-hdU"/>
+                        <slider width="1" alignment="center" verticalAlignment="bottom" maximum="3" steps="3" id="oJX-8U-hdU">
+                            <connections>
+                                <action selector="currencyChooser:" destination="AgC-eL-Hgc" id="yTh-g2-35g"/>
+                            </connections>
+                        </slider>
                     </items>
                     <connections>
+                        <outlet property="currencyLabel" destination="xhM-PF-rg7" id="7bl-ps-KtF"/>
                         <segue destination="B4m-eZ-aye" kind="relationship" relationship="nextPage" id="PTv-iN-5JD"/>
                     </connections>
                 </controller>
