@@ -13,7 +13,8 @@ var activeCurrency = 0
 var currencies = ["GBP", "EUR", "JPY", "CAD"]
 var currencyConversions = [0.7, 0.8, 0.9, 1.5]
 
-class InterfaceController: WKInterfaceController {
+
+class InterfaceController: WKInterfaceController, XMLParserDelegate {
     
 
     @IBOutlet var currencyLabel: WKInterfaceLabel!
@@ -29,17 +30,29 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
-    }
+        let url = NSURL(string: "http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote")
+        
+        let task = URLSession.shared.dataTask(with: url! as URL, completionHandler: {
+         (data, response, error) -> Void in
+        
+            if error == nil {
+                
+                print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!)
+                
+                var xmlParser = XMLParser()
+                xmlParser = XMLParser(data: data!)
+                xmlParser.delegate = self
+                xmlParser.parse()
+                
+            } else {
+                
+                print(error!)
+                
+            }
+        
+    })
     
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-    
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
+    task.resume()
+}
 
 }
