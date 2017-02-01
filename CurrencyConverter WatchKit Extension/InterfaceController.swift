@@ -18,7 +18,7 @@ class InterfaceController: WKInterfaceController, XMLParserDelegate {
     
     var element = ""
     var nameAttribute = ""
-    var getCurrency = false
+    var getCurrency = -1
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
@@ -34,18 +34,23 @@ class InterfaceController: WKInterfaceController, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         if element == "field" && nameAttribute == "name" {
-            if string == "USD/KRW" {
+            
+            for (index, currency) in currencies.enumerated() {
+            
+            if string == "USD/" + currency {
                 
-                getCurrency = true
+                getCurrency = index
                 
             }
-            
+            }
         }
         
-        if element == "field" && nameAttribute == "price" && getCurrency == true {
+        if element == "field" && nameAttribute == "price" && getCurrency != -1 {
             print(string)
             
-            getCurrency = false
+            currencyConversions[getCurrency] = (string as NSString).doubleValue
+            
+            getCurrency = -1
             
         }
     }
