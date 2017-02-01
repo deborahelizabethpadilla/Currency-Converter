@@ -16,6 +16,40 @@ var currencyConversions = [0.7, 0.8, 0.9, 1.5]
 
 class InterfaceController: WKInterfaceController, XMLParserDelegate {
     
+    var element = ""
+    var nameAttribute = ""
+    var getCurrency = false
+    
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        
+        element = elementName
+        
+        if attributeDict["name"] != nil {
+            nameAttribute = attributeDict["name"]! as String
+            
+        } else {
+            nameAttribute = ""
+        }
+    }
+    
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        if element == "field" && nameAttribute == "name" {
+            if string == "USD/KRW" {
+                
+                getCurrency = true
+                
+            }
+            
+        }
+        
+        if element == "field" && nameAttribute == "price" && getCurrency == true {
+            print(string)
+            
+            getCurrency = false
+            
+        }
+    }
+    
 
     @IBOutlet var currencyLabel: WKInterfaceLabel!
     
