@@ -11,6 +11,8 @@ import Foundation
 
 class detailInterfaceController: WKInterfaceController {
     
+    var conversionRate = 0.763
+    
     @IBOutlet var dollarsLabel: WKInterfaceLabel!
     
     @IBOutlet var conversionAmount: WKInterfaceLabel!
@@ -19,7 +21,10 @@ class detailInterfaceController: WKInterfaceController {
     
     @IBAction func adjustAmount(_ value: Float) {
         
+        var numberOfDollars = Int(value * 20)
+        dollarsLabel.setText("\(numberOfDollars) USD equals...")
         
+        conversionAmount.setText("\(Double(numberOfDollars) * conversionRate)")
     }
     
     override func awake(withContext context: Any?) {
