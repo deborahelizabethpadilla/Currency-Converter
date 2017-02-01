@@ -22,6 +22,7 @@
 		509A352A1E42405700B9238D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A35291E42405700B9238D /* ExtensionDelegate.swift */; };
 		509A352C1E42405700B9238D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A352B1E42405700B9238D /* NotificationController.swift */; };
 		509A352E1E42405700B9238D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509A352D1E42405700B9238D /* Assets.xcassets */; };
+		509A35441E42550F00B9238D /* detailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A35431E42550F00B9238D /* detailInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		509A352B1E42405700B9238D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		509A352D1E42405700B9238D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		509A352F1E42405700B9238D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		509A35431E42550F00B9238D /* detailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = detailInterfaceController.swift; path = "../CurrencyConverter WatchKit App/detailInterfaceController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				509A35271E42405700B9238D /* InterfaceController.swift */,
+				509A35431E42550F00B9238D /* detailInterfaceController.swift */,
 				509A35291E42405700B9238D /* ExtensionDelegate.swift */,
 				509A352B1E42405700B9238D /* NotificationController.swift */,
 				509A352D1E42405700B9238D /* Assets.xcassets */,
@@ -454,6 +457,7 @@
 			files = (
 				509A352C1E42405700B9238D /* NotificationController.swift in Sources */,
 				509A352A1E42405700B9238D /* ExtensionDelegate.swift in Sources */,
+				509A35441E42550F00B9238D /* detailInterfaceController.swift in Sources */,
 				509A35281E42405700B9238D /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

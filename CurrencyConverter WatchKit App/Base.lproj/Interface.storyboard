@@ -32,18 +32,27 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--detailInterface-->
         <scene sceneID="7ua-fI-mPa">
             <objects>
-                <controller id="B4m-eZ-aye">
+                <controller identifier="detailInterface" id="B4m-eZ-aye" customClass="detailInterfaceController" customModule="CurrencyConverter_WatchKit_Extension">
                     <items>
                         <label width="1" alignment="center" text="1 USD equals..." textAlignment="center" id="gVE-xw-G82"/>
                         <label width="1" alignment="center" text="0.763" textAlignment="center" id="ROw-Fb-PcI">
                             <fontDescription key="font" type="system" pointSize="25"/>
                         </label>
                         <label width="1" alignment="center" verticalAlignment="center" text="GBP" textAlignment="center" id="ldf-SE-sjg"/>
-                        <slider width="1" alignment="center" verticalAlignment="bottom" value="0.050000000000000003" steps="20" id="Gld-4Z-H33"/>
+                        <slider width="1" alignment="center" verticalAlignment="bottom" value="0.050000000000000003" steps="20" id="Gld-4Z-H33">
+                            <connections>
+                                <action selector="adjustAmount:" destination="B4m-eZ-aye" id="bSd-Q8-Pf9"/>
+                            </connections>
+                        </slider>
                     </items>
+                    <connections>
+                        <outlet property="conversionAmount" destination="ROw-Fb-PcI" id="Kfx-wi-rlc"/>
+                        <outlet property="currencyLabel" destination="ldf-SE-sjg" id="EFV-xf-Z5P"/>
+                        <outlet property="dollarsLabel" destination="gVE-xw-G82" id="onr-aV-7Om"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="445" y="345"/>
