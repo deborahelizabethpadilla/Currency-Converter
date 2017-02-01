@@ -83,6 +83,8 @@ class InterfaceController: WKInterfaceController, XMLParserDelegate {
                 xmlParser.delegate = self
                 xmlParser.parse()
                 
+                print(currencyConversions)
+                
             } else {
                 
                 print(error!)
