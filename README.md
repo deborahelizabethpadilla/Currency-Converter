@@ -1,5 +1,7 @@
 # Currency-Converter
 
+**Summary:**
+
 This application was created as a currency converter for four different currencies. This project firmed up my knowledge on using mathematical concepts to help create this application. 
 
 **The application offers the following features:**
