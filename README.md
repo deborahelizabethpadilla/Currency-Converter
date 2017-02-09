@@ -10,6 +10,7 @@ This application was created as a currency converter for four different currenci
 **Technologies Used In Application:**
 * WatchKit
 * Labels
+* Swift
 * API
 
 **Closing:**
